@@ -13,4 +13,8 @@ public class Kata {
     System.err.println("Missing command line arguments");
     System.exit(1);
   }
+
+  public static String getRomanNumeralFor(int number) {
+    return "I";
+  }
 }
