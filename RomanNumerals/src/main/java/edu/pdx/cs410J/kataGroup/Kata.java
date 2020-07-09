@@ -8,6 +8,9 @@ package edu.pdx.cs410J.kataGroup;
  */
 public class Kata {
                                                                                     
+  private static final String[] onesNumerals = {"I", "V", "X"};
+  private static final String[] tensNumerals = {"X", "L", "C"};
+  private static final String[] hundredsNumerals = {"C", "D", "M"};
 
   public static void main(String[] args) {
     System.err.println("Missing command line arguments");
@@ -15,6 +18,26 @@ public class Kata {
   }
 
   public static String getRomanNumeralFor(int number) {
-    return "I";
+    int tens = number / 10;
+    int ones = number % 10;
+
+    return getString(ones);
   }
+
+  private static String getString(int ones) {
+    String romanNumeral = "";
+    switch (ones) {
+      case 10: return "X";
+      case 5: return "V";
+      case 4: return "IV";
+      case 3: romanNumeral += onesNumerals[0];
+      case 2: romanNumeral += onesNumerals[0];
+      case 1: romanNumeral += onesNumerals[0];
+              break;
+      default: return "";
+    }
+    return romanNumeral;
+  }
+
+
 }
