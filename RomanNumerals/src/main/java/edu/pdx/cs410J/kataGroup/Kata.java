@@ -20,19 +20,27 @@ public class Kata {
   public static String getRomanNumeralFor(int number) {
     int tens = number / 10;
     int ones = number % 10;
+    int fives = number % 5;
 
-    return getString(ones);
+    return getString(tens, tensNumerals) + getString(ones, onesNumerals);
   }
 
-  private static String getString(int ones) {
+  private static String getString(int ones, String[] numeral) {
     String romanNumeral = "";
+
     switch (ones) {
-      case 10: return "X";
-      case 5: return "V";
-      case 4: return "IV";
-      case 3: romanNumeral += onesNumerals[0];
-      case 2: romanNumeral += onesNumerals[0];
-      case 1: romanNumeral += onesNumerals[0];
+      case 9: romanNumeral = numeral[0] + numeral[2];
+              break;
+      case 8: romanNumeral += numeral[0];
+      case 7: romanNumeral += numeral[0];
+      case 6: romanNumeral = numeral[1] + numeral[0] + romanNumeral;
+              break;
+      case 4: romanNumeral += numeral[0];
+      case 5: romanNumeral += numeral[1];
+              break;
+      case 3: romanNumeral += numeral[0];
+      case 2: romanNumeral += numeral[0];
+      case 1: romanNumeral += numeral[0];
               break;
       default: return "";
     }

@@ -25,27 +25,32 @@ public class KataTest
   }
 
   @Test
-  @Ignore
   public void romanNumeralFor5IsV() {
     assertThat(Kata.getRomanNumeralFor(5), equalTo("V"));
   }
 
   @Test
-  @Ignore
   public void romanNumeralFor10IsX() {
     assertThat(Kata.getRomanNumeralFor(10), equalTo("X"));
   }
 
   @Test
-  @Ignore
   public void romanNumeralFor4IsIV() {
     assertThat(Kata.getRomanNumeralFor(4), equalTo("IV"));
   }
 
   @Test
-  @Ignore
+  public void romanNumeralFor7IsVII() {
+    assertThat(Kata.getRomanNumeralFor(7), equalTo("VII"));
+  }
+
+  @Test
   public void romanNumeralFor9IsIX() {
     assertThat(Kata.getRomanNumeralFor(9), equalTo("IX"));
   }
 
+  @Test
+  public void romanNumeralFor36IsSomething() {
+    assertThat(Kata.getRomanNumeralFor(9), equalTo("XXXVI"));
+  }
 }
