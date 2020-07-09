@@ -51,6 +51,6 @@ public class KataTest
 
   @Test
   public void romanNumeralFor36IsSomething() {
-    assertThat(Kata.getRomanNumeralFor(9), equalTo("XXXVI"));
+    assertThat(Kata.getRomanNumeralFor(36), equalTo("XXXVI"));
   }
 }
